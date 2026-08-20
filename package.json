@@ -19,7 +19,7 @@
     "electron-updater": "^6.3.9"
   },
   "devDependencies": {
-    "electron": "^32.2.0",
+    "electron": "^39.8.10",
     "electron-builder": "^25.1.8",
     "electron-reload": "2.0.0-alpha.1",
     "png-to-ico": "^3.0.2",
