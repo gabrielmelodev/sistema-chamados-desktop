@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f3f3f3" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Chamados</title>
+  <link rel="stylesheet" href="./styles/toolbar.css" />
+</head>
+
+<body>
+
+  <header id="titlebar" class="titlebar" role="toolbar" aria-label="Formosa Chamados">
+
+    <!-- IDENTIDADE -->
+    <div class="brand" aria-label="Formosa Chamados" title="Formosa Chamados">
+      <div class="brand-icon" aria-hidden="true">
+        <img src="../../build/icon.svg" width="32" height="32" alt="" />
+      </div>
+      <span class="brand-name">Formosa Chamados</span>
+    </div>
+
+
+
+    <!-- ÁREA CENTRAL ARRASTÁVEL -->
+    <div class="drag-area" aria-hidden="true"></div>
+
+    <!-- NOTIFICAÇÕES E CONTROLES -->
+    <div id="ticket-notifications" class="ticket-notifications">
+      <button id="notifications" class="toolbar-button notification-button" type="button" aria-label="Notificações"
+        title="Chamados pendentes" aria-describedby="ticket-badge">
+        <svg class="notification-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M10 21h4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+        </svg>
+        <span id="ticket-badge" class="ticket-badge hidden" aria-hidden="true">0</span>
+      </button>
+
+
+
+      <!-- SOM NOTIFICAÇÕES (adicional Electron) -->
+      <button id="btn-sound" class="toolbar-button" type="button" aria-label="Som das notificações"
+        title="Som das notificações" aria-pressed="true" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round" />
+          <path d="M15.5 9.5A4 4 0 0 1 15.5 14.5" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <button id="btn-logout" class="toolbar-button" type="button" aria-label="Sair" title="Encerrar sessão" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M10 5H5v14h5M14 8l4 4-4 4M9 12h9" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- STATUS DE CONEXÃO -->
+    <div id="connection" class="connection" role="status" aria-live="polite" aria-atomic="true"
+      title="Status do sistema">
+      <span id="status-dot" class="status-dot loading" aria-hidden="true"></span>
+      <span id="status-text">Carregando...</span>
+    </div>
+
+    <!-- CONTROLES WINDOWS -->
+    <div class="window-controls" role="group" aria-label="Controles da janela">
+      <button id="minimize" class="window-button" type="button" aria-label="Minimizar" title="Minimizar">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M5 12h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <button id="maximize" class="window-button" type="button" aria-label="Maximizar" title="Maximizar">
+        <svg id="maximize-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="5" y="5" width="14" height="14" rx="1" stroke="currentColor" stroke-width="2" fill="none" />
+        </svg>
+      </button>
+
+      <button id="close" class="window-button close" type="button" aria-label="Fechar" title="Fechar">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- BANNER DE ATUALIZAÇÃO -->
+  <div id="update-banner" class="update-banner" hidden>
+    <div class="update-content">
+      <span class="update-text">Atualização pronta. Reiniciar para aplicar?</span>
+      <div class="update-actions">
+        <button id="btn-update-now" class="update-button update-button-primary">Reiniciar</button>
+        <button id="btn-update-later" class="update-button">Depois</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVISOR ARRASTÁVEL (split-screen) -->
+  <div id="split-divider" class="split-divider" hidden></div>
+
+  <!-- SCRIPT DA TOOLBAR -->
+  <script src="./scripts/toolbar.js"></script>
+
+</body>
+
+</html>
