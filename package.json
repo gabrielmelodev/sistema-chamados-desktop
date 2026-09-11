@@ -23,7 +23,7 @@
     "electron-builder": "^25.1.8",
     "electron-reload": "2.0.0-alpha.1",
     "png-to-ico": "^3.0.2",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.4"
   },
   "build": {
     "appId": "br.go.formosa.sistemachamados",
